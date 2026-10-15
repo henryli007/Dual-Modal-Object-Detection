@@ -1,0 +1,23 @@
+experiment_name = "smoke_rgbt_v1"
+seed = 3407
+num_workers = 4
+batch_size = 2
+epochs = 1
+learning_rate = 0.0002
+weight_decay = 0.0001
+gradient_clip_norm = 5.0
+mixed_precision = true
+device = "cuda"
+
+[optimizer]
+name = "adamw"
+
+[logging]
+log_interval = 5
+save_interval = 1
+output_dir = "outputs/models/smoke_rgbt_v1"
+
+[evaluation]
+metric = "coco_map"
+primary_split = "val"
+score_threshold = 0.05

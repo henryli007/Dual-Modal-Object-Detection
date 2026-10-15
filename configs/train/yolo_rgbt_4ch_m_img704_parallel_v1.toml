@@ -1,0 +1,43 @@
+experiment_name = "yolo_rgbt_4ch_m_img704_parallel_v1"
+seed = 3407
+model = "yolo11m.pt"
+view = "rgbt_4ch"
+epochs = 60
+batch_size = 4
+image_size = 704
+workers = 4
+device = 0
+patience = 12
+cache = false
+pretrained = true
+optimizer = "AdamW"
+learning_rate = 0.0007
+weight_decay = 0.0005
+close_mosaic = 10
+output_dir = "outputs/yolo"
+project = "outputs/yolo"
+name = "yolo_rgbt_4ch_m_img704_parallel_v1"
+cos_lr = true
+warmup_epochs = 3.0
+box_loss_gain = 8.5
+cls_loss_gain = 0.42
+dfl_loss_gain = 1.8
+
+[augmentation]
+hsv_h = 0.008
+hsv_s = 0.30
+hsv_v = 0.22
+degrees = 0.0
+translate = 0.05
+scale = 0.32
+shear = 0.0
+fliplr = 0.5
+mosaic = 0.55
+mixup = 0.02
+copy_paste = 0.0
+
+[prediction]
+confidence = 0.001
+iou = 0.7
+max_detections = 150
+tta = true

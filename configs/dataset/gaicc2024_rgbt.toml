@@ -1,0 +1,17 @@
+name = "gaicc2024_rgbt_detection"
+dataset_root = "data/raw/official/GAIIC2024-赛道1-目标检测任务"
+train_rgb_dir = "train/rgb"
+train_tir_dir = "train/tir"
+train_ann = "train/train.json"
+val_rgb_dir = "val/rgb"
+val_tir_dir = "val/tir"
+val_ann = "val/val.json"
+test_rgb_dir = "test/rgb"
+test_tir_dir = "test/tir"
+expected_image_width = 640
+expected_image_height = 512
+
+[expected_counts]
+train_pairs = 17990
+val_pairs = 1469
+test_pairs = 1000

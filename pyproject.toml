@@ -1,0 +1,20 @@
+[project]
+name = "uav-rgbt-detection"
+version = "0.1.0"
+description = "Standalone UAV RGB-T object detection project scaffold."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib>=3.7",
+  "numpy>=1.24",
+  "pillow>=10.0",
+  "requests>=2.31",
+  "pypdf>=4.0",
+  "pyppeteer>=2.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

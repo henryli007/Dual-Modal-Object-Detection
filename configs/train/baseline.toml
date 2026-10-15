@@ -1,0 +1,25 @@
+experiment_name = "baseline_rgbt_v1"
+seed = 3407
+num_workers = 12
+batch_size = 20
+epochs = 20
+learning_rate = 0.0008
+weight_decay = 0.0001
+gradient_clip_norm = 5.0
+mixed_precision = true
+device = "cuda"
+ema_decay = 0.9998
+
+[optimizer]
+name = "adamw"
+
+[logging]
+log_interval = 20
+save_interval = 1
+output_dir = "outputs/models/baseline_rgbt_v1"
+
+[evaluation]
+metric = "coco_map"
+primary_split = "val"
+score_threshold = 0.01
+tta_hflip = true

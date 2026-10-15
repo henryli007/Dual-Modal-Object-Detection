@@ -1,0 +1,43 @@
+experiment_name = "yolo_rgbt_fused_x_img1024_finetune_v2"
+seed = 3407
+model = "/root/autodl-tmp/UAV-RGBT-Detection/outputs/yolo/yolo_rgbt_fused_x_img896_v1/weights/best.pt"
+view = "rgbt_fused"
+epochs = 30
+batch_size = 4
+image_size = 1024
+workers = 8
+device = 0
+patience = 10
+cache = false
+pretrained = true
+optimizer = "AdamW"
+learning_rate = 0.00006
+weight_decay = 0.00035
+close_mosaic = 0
+cos_lr = true
+warmup_epochs = 2.0
+box_loss_gain = 8.5
+cls_loss_gain = 0.45
+dfl_loss_gain = 1.7
+output_dir = "outputs/yolo"
+project = "outputs/yolo"
+name = "yolo_rgbt_fused_x_img1024_finetune_v2"
+
+[augmentation]
+hsv_h = 0.004
+hsv_s = 0.12
+hsv_v = 0.10
+degrees = 0.0
+translate = 0.025
+scale = 0.12
+shear = 0.0
+fliplr = 0.5
+mosaic = 0.0
+mixup = 0.0
+copy_paste = 0.0
+
+[prediction]
+confidence = 0.001
+iou = 0.7
+max_detections = 100
+tta = true

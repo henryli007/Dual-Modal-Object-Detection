@@ -1,0 +1,38 @@
+experiment_name = "yolo_tir_v1"
+seed = 3407
+model = "yolo11m.pt"
+view = "tir"
+epochs = 80
+batch_size = 24
+image_size = 640
+workers = 8
+device = 0
+patience = 20
+cache = false
+pretrained = true
+optimizer = "AdamW"
+learning_rate = 0.001
+weight_decay = 0.0005
+close_mosaic = 10
+output_dir = "outputs/yolo"
+project = "outputs/yolo"
+name = "yolo_tir_v1"
+
+[augmentation]
+hsv_h = 0.0
+hsv_s = 0.0
+hsv_v = 0.2
+degrees = 0.0
+translate = 0.08
+scale = 0.4
+shear = 0.0
+fliplr = 0.5
+mosaic = 0.7
+mixup = 0.05
+copy_paste = 0.0
+
+[prediction]
+confidence = 0.001
+iou = 0.7
+max_detections = 150
+tta = true

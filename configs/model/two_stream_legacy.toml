@@ -1,0 +1,22 @@
+name = "two_stream_legacy"
+family = "rgbt_detector"
+backbone_rgb = "resnet50_fpn"
+backbone_tir = "resnet50_fpn"
+fusion = "mid_fusion_attention"
+neck = "fpn"
+head = "coco_detection_head"
+pretrained = true
+anchor_sizes = [16, 32, 64, 128, 256]
+
+[input]
+image_width = 640
+image_height = 512
+normalize_rgb = true
+normalize_tir = true
+
+[augmentation]
+horizontal_flip = 0.5
+multi_scale_min = 1.0
+multi_scale_max = 1.0
+color_jitter_rgb = 0.0
+tir_gain = 0.0

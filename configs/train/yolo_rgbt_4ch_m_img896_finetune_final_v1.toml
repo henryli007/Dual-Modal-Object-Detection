@@ -1,0 +1,50 @@
+experiment_name = "yolo_rgbt_4ch_m_img896_finetune_final_v1"
+seed = 3407
+model = "/root/autodl-tmp/UAV-RGBT-Detection/outputs/yolo/yolo_rgbt_4ch_m_img704_parallel_v1/weights/best.pt"
+view = "rgbt_4ch"
+epochs = 24
+batch_size = 2
+image_size = 896
+workers = 4
+device = 0
+patience = 8
+cache = false
+pretrained = true
+optimizer = "AdamW"
+learning_rate = 0.00008
+weight_decay = 0.00035
+close_mosaic = 0
+output_dir = "outputs/yolo"
+project = "outputs/yolo"
+name = "yolo_rgbt_4ch_m_img896_finetune_final_v1"
+cos_lr = true
+warmup_epochs = 1.0
+save_period = 1
+rect = false
+multi_scale = false
+amp = true
+plots = true
+box_loss_gain = 9.0
+cls_loss_gain = 0.38
+dfl_loss_gain = 2.0
+
+[augmentation]
+hsv_h = 0.004
+hsv_s = 0.12
+hsv_v = 0.10
+degrees = 2.0
+translate = 0.035
+scale = 0.18
+shear = 0.0
+fliplr = 0.5
+mosaic = 0.0
+mixup = 0.0
+copy_paste = 0.0
+erasing = 0.10
+auto_augment = "randaugment"
+
+[prediction]
+confidence = 0.0005
+iou = 0.7
+max_detections = 200
+tta = true

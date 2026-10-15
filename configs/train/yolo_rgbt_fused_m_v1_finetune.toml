@@ -1,0 +1,38 @@
+experiment_name = "yolo_rgbt_fused_m_v1_finetune"
+seed = 3407
+model = "outputs/yolo/yolo_rgbt_fused_m_v1/weights/best.pt"
+view = "rgbt_fused"
+epochs = 15
+batch_size = 16
+image_size = 640
+workers = 8
+device = 0
+patience = 8
+cache = false
+pretrained = true
+optimizer = "AdamW"
+learning_rate = 0.0002
+weight_decay = 0.0005
+close_mosaic = 0
+output_dir = "outputs/yolo"
+project = "outputs/yolo"
+name = "yolo_rgbt_fused_m_v1_finetune"
+
+[augmentation]
+hsv_h = 0.01
+hsv_s = 0.3
+hsv_v = 0.2
+degrees = 0.0
+translate = 0.04
+scale = 0.2
+shear = 0.0
+fliplr = 0.5
+mosaic = 0.0
+mixup = 0.0
+copy_paste = 0.0
+
+[prediction]
+confidence = 0.001
+iou = 0.7
+max_detections = 100
+tta = true

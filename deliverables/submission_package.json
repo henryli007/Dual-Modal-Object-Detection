@@ -1,0 +1,49 @@
+{
+  "final_submission_json": "deliverables/final_submission_gelan_dualstream_e40_under5mb.json",
+  "equivalent_project_submission_json": "deliverables/final_submission_gelan_dualstream_e40_under5mb.json",
+  "method": "dual-stream RGB-T GELAN detector",
+  "local_validation": {
+    "metric": "COCO bbox mAP@[.50:.95]",
+    "mAP": 0.641,
+    "mAP50": 0.843,
+    "split": "official val"
+  },
+  "submission_audit": {
+    "size_mb": 4.697,
+    "predictions": 58410,
+    "covered_images": 1000,
+    "missing_images": 0,
+    "invalid_records": 0,
+    "max_detections_on_one_image": 60
+  },
+  "representative_ablation_submissions": [
+    "data/submissions/submission_final_rgbt_v5_advanced_selfwbf.json",
+    "data/submissions/submission_yolo11m_rgbt4ch_img704_best_map0p628_iou070_th0p002_notta_under5mb.json",
+    "data/submissions/submission_fused_competitive_v3_advanced_yolox_w025_iou060_th0p002_under5mb.json",
+    "deliverables/final_submission_gelan_dualstream_e40_under5mb.json"
+  ],
+  "pretrained_weights": [
+    {
+      "name": "resnet50-11ad3fa6.pth",
+      "source": "torchvision",
+      "md5": "012571d812f34f8442473d8b827077b5"
+    },
+    {
+      "name": "gelan-e.pt",
+      "source": "GELAN/YOLOv9 open-source pretrained weight",
+      "md5": "5b4cf9356e206bf5621e2f4e41120d4b"
+    },
+    {
+      "name": "yolov9-e.pt",
+      "source": "YOLOv9 open-source pretrained weight",
+      "md5": "0be4b088452771e1349fc368e0956f19"
+    },
+    {
+      "name": "yolo11m.pt",
+      "source": "Ultralytics YOLO11m pretrained weight",
+      "md5": null,
+      "note": "used in YOLO ablations and removed during cleanup"
+    }
+  ],
+  "cleanup_note": "Large checkpoints, raw predictions, YOLO derived caches, smoke files, and logs were removed before packaging."
+}
